@@ -1,0 +1,15 @@
+<%= form_for @new_job do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :company %>
+  <%= f.text_field :company %>
+  <%= f.label :post_date %>
+  <%= f.date_field :post_date %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+  <%= f.submit %>
+<% end %>

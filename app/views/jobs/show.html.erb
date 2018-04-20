@@ -11,3 +11,12 @@
     <p>Your rating: <%= @job.rating %>/10</p>
   </div>
 </div>
+
+<div class="card">
+  <h4>Your steps for this job:</h4>
+  <div class="card-body">
+    <% @steps.each do |step| %>
+      <p><%= step.description %></p>
+    <% end %>
+  </div>
+</div>
