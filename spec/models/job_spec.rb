@@ -7,5 +7,5 @@ describe Job do
   it { should validate_presence_of :rating }
   it { should validate_presence_of :location }
   it { should validate_presence_of :url }
-  it { should have_many :steps }
+  # it { should have_many :steps }
 end
