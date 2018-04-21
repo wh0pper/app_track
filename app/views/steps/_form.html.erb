@@ -1,11 +1,12 @@
-<%= form_for [@job, @new_step] do |f| %>
+<%= form_for [@job, @new_step], class:"form-control-group" do |f| %>
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_field :description, class: 'form-control' %>
   <%= f.label :notes %>
-  <%= f.text_field :notes %>
+  <%= f.text_field :notes, class: 'form-control' %>
   <%= f.label :due_date %>
-  <%= f.date_field :due_date %>
+  <%= f.date_field :due_date, class: 'form-control' %>
   <%= f.label :priority %>
-  <%= f.number_field :priority %>
-  <%= f.submit %>
+  <%= f.number_field :priority, class: 'form-control' %>
+  <br>
+  <%= f.submit class: 'btn btn-primary'%>
 <% end %>
