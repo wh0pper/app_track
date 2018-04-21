@@ -4,15 +4,16 @@ Step.destroy_all
 def add_default_steps(job)
 
   default_steps = [
-    {description: "LinkedIn Research", due_date: Faker::Date.forward(10), priority: 1},
-    {description: "Write Cover Letter", due_date: Faker::Date.forward(14), priority: 3},
-    {description: "Tailor Résumé", due_date: Faker::Date.forward(14), priority: 3},
-    {description: "Apply", due_date: Faker::Date.forward(17), priority: 3},
-    {description: "Followup", due_date: Faker::Date.forward(21), priority: 2}
+    {description: "LinkedIn Research", notes: "Notes...", due_date: Faker::Date.forward(10), priority: 1},
+    {description: "Write Cover Letter", notes: "Notes...", due_date: Faker::Date.forward(14), priority: 3},
+    {description: "Tailor Résumé", notes: "Notes...", due_date: Faker::Date.forward(14), priority: 3},
+    {description: "Apply", notes: "Notes...", due_date: Faker::Date.forward(17), priority: 3},
+    {description: "Followup", notes: "Notes...", due_date: Faker::Date.forward(21), priority: 2}
   ]
 
   default_steps.each do |step|
     job.steps.create(description: step[:description],
+                notes: step[:notes],
                 due_date: step[:due_date],
                 priority: step[:priority])
   end
