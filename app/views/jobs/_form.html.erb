@@ -1,15 +1,17 @@
-<%= form_for @new_job do |f| %>
+
+<%= form_for @new_job, html: {class: "form-control-group"} do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, class: 'form-control' %>
   <%= f.label :company %>
-  <%= f.text_field :company %>
+  <%= f.text_field :company, class: 'form-control' %>
   <%= f.label :post_date %>
-  <%= f.date_field :post_date %>
+  <%= f.date_field :post_date, class: 'form-control' %>
   <%= f.label :rating %>
-  <%= f.number_field :rating %>
+  <%= f.number_field :rating, class: 'form-control' %>
   <%= f.label :location %>
-  <%= f.text_field :location %>
+  <%= f.text_field :location, class: 'form-control' %>
   <%= f.label :url %>
-  <%= f.text_field :url %>
-  <%= f.submit %>
+  <%= f.text_field :url, class: 'form-control' %>
+  <br>
+  <%= f.submit class: 'btn btn-primary' %>
 <% end %>
