@@ -16,6 +16,6 @@ class StepsController < ApplicationController
 
 private
   def step_params
-    params.require(:step).permit(:description, :due_date, :priority)
+    params.require(:step).permit(:description, :notes, :due_date, :priority)
   end
 end
