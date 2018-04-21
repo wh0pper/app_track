@@ -1,0 +1,9 @@
+<%= form_for [@job, @new_step] do |f| %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :due_date %>
+  <%= f.date_field :due_date %>
+  <%= f.label :priority %>
+  <%= f.number_field :priority %>
+  <%= f.submit %>
+<% end %>

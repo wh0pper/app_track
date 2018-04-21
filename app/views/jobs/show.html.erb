@@ -18,5 +18,6 @@
     <% @steps.each do |step| %>
       <p><%= step.description %></p>
     <% end %>
+    <button type="button" name="button"><%= link_to "Add a step", new_job_step_path(@job)  %></button>
   </div>
 </div>
