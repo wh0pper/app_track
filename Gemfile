@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'jquery-rails'
 gem 'faker'
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'p-sass', '~> 3.3.7'
 
 
 group :development, :test do
