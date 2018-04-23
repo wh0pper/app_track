@@ -14,6 +14,10 @@ class StepsController < ApplicationController
     end
   end
 
+  def update
+    Step.find(params[:id]).update(:status => true) #true is "done"
+  end
+
 private
   def step_params
     params.require(:step).permit(:description, :notes, :due_date, :priority)

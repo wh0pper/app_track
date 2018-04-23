@@ -1,8 +1,8 @@
 <h1>Jobs List:</h1>
 <h6>Filter by:</h6>
 <%= link_to 'most steps remaining', filter_jobs_path(:most) %> |
-<%= link_to 'fewest steps remaining', filter_jobs_path(:fewest) %>
-<%= link_to 'recently added', filter_jobs_path(:recent) %> |
+<%= link_to 'fewest steps remaining', filter_jobs_path(:fewest) %> |
+<%= link_to 'recently added', filter_jobs_path(:recent) %>
 
 <ul class="list-group">
   <% @jobs.each do |job| %>

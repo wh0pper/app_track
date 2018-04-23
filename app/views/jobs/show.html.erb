@@ -21,7 +21,10 @@
   <div class="card-body">
     <ul class="list-group">
       <% @steps.each do |step| %>
-        <li class="list-group-item"><%= step.description %></li>
+        <li class="list-group-item">
+          <%= step.description %>
+          <%= link_to "mark complete", job_step_path(@job, step), :method => :put %>
+        </li>
       <% end %>
     </ul>
     <button type="button" name="button"><%= link_to "Add a step", new_job_step_path(@job)  %></button>
