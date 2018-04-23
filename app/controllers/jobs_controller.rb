@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   def index
+    # binding.pry
     @jobs = Job.all
     @new_job = Job.new
 

@@ -1,5 +1,6 @@
 <h1>Jobs List:</h1>
-
+<h6>Filter by:</h6>
+<%= button_to 'most steps', jobs_path %> 
 <ul class="list-group">
   <% @jobs.each do |job| %>
     <li class="list-group-item"><%= link_to job.title, job_path(job) %></li>
