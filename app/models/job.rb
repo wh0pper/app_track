@@ -1,7 +1,7 @@
 class Job < ActiveRecord::Base
   has_many :steps
   validates :title, :company, :post_date, :rating, :location, :url, presence: true
-  validates :rating, numericality: { only_integer: true }, :inclusion => {:in => [1,2]}
+  validates :rating, numericality: { only_integer: true }, :inclusion => 1..10
 
   scope :most_steps, -> {(
     select("jobs.id, jobs.title, count(steps.id) as steps_count")
