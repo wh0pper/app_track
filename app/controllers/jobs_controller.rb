@@ -1,9 +1,7 @@
 class JobsController < ApplicationController
   def index
-    # binding.pry
     @jobs = Job.all
     @new_job = Job.new
-
   end
 
   def show
@@ -27,6 +25,16 @@ class JobsController < ApplicationController
   def destroy
     Job.find(params[:id]).destroy
     redirect_to jobs_path
+  end
+
+  def filter
+    # binding.pry
+    @new_job = Job.new
+    case params[:format]
+    when "most"
+      @jobs = Job.most_steps
+    end
+    render :index
   end
 
 private

@@ -1,11 +1,12 @@
 <h1>Jobs List:</h1>
 <h6>Filter by:</h6>
-<%= button_to 'most steps', jobs_path %> 
+<%= link_to 'most steps', filter_jobs_path(:most) %>
 <ul class="list-group">
   <% @jobs.each do |job| %>
     <li class="list-group-item"><%= link_to job.title, job_path(job) %></li>
   <% end %>
 </ul>
 <hr>
+
 <h4>Add a new job:</h4>
 <%= render "jobs/form" %>

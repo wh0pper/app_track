@@ -3,7 +3,7 @@ class Job < ActiveRecord::Base
   validates :title, :company, :post_date, :rating, :location, :url, presence: true
 
   scope :most_steps, -> {(
-    select("jobs.id, jobs.title")
+    select("jobs.id, jobs.title, count(steps.id) as steps_count")
     .joins(:steps)
     .group("jobs.id")
     .order("steps_count DESC")
