@@ -9,4 +9,6 @@ class Job < ActiveRecord::Base
     .order("steps_count DESC")
     .limit(10)
     )}
+
+  scope :most_recent, -> { order(created_at: :desc).limit(10) }  
 end
