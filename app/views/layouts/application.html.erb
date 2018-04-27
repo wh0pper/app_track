@@ -13,8 +13,6 @@
     <div class="container">
       <% if current_user %>
         <h4>Logged in as: <%= current_user.email %> | <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></h4>
-      <% else %>
-        <h4>Sign-up to get started tracking your job applications</h4>
       <% end %>
 
       <%= yield %>

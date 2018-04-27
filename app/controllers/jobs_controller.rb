@@ -5,7 +5,7 @@ class JobsController < ApplicationController
       @new_job = Job.new
     else
       redirect_to :new_user_registration
-    end   
+    end
   end
 
   def show
@@ -18,8 +18,8 @@ class JobsController < ApplicationController
   end
 
   def create
-    @new_job_to_save = Job.new(job_params)
-    if @new_job_to_save.save
+    @new_job_to_save = current_user.jobs.new(job_params)
+    if @new_job_to_save.save!
       redirect_to jobs_path
     else
       render :new
