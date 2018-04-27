@@ -6,23 +6,25 @@ class Job < ActiveRecord::Base
 
   after_create :add_default_steps
 
-  scope :most_steps, -> {(
+  scope :most_steps, -> (current_user) {(
     select("jobs.id, jobs.title, count(steps.id) as steps_count")
+    .where(user_id: current_user.id)
     .joins(:steps)
     .group("jobs.id")
     .order("steps_count DESC")
     .limit(10)
     )}
 
-  scope :fewest_steps, -> {(
+  scope :fewest_steps, -> (current_user) {(
     select("jobs.id, jobs.title, count(steps.id) as steps_count")
+    .where(user_id: current_user.id)
     .joins(:steps)
     .group("jobs.id")
     .order("steps_count ASC")
     .limit(10)
     )}
 
-  scope :most_recent, -> { order(created_at: :desc).limit(10) }
+  scope :most_recent, -> (current_user) { order(created_at: :desc).where(user_id: current_user.id).limit(10) }
 
   private
     def add_default_steps

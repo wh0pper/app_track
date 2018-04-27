@@ -36,11 +36,11 @@ class JobsController < ApplicationController
     @new_job = Job.new
     case params[:format]
     when "most"
-      @jobs = Job.most_steps
+      @jobs = Job.most_steps(current_user)
     when "fewest"
-      @jobs = Job.fewest_steps
+      @jobs = Job.fewest_steps(current_user)
     when "recent"
-      @jobs = Job.last(10)
+      @jobs = Job.most_recent(current_user)
     end
     render :index
   end
