@@ -7,9 +7,11 @@ class StepsController < ApplicationController
   def create
     @job = Job.find(params[:job_id])
     @new_step = @job.steps.new(step_params)
-    if @new_step.save
+    if @new_step.save!
+      flash[:notice] = "Step successfully added."
       redirect_to job_path(@job)
     else
+      flash[:alert] = "There was an error adding this step."
       render :new
     end
   end
