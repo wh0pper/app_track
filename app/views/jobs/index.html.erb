@@ -1,5 +1,8 @@
-<h3>Your résumé:</h3>
-<a href="<%= current_user.resume.url %>">Here </a>
+<% if current_user.resume_file_name != nil  %>
+  <a href="<%= current_user.resume.url %>">View your résumé</a>
+<% else %>
+  No résumé uploaded. Edit profile to add.
+<% end %>
 
 <h1>Jobs List:</h1>
 <h6>Filter by:</h6>

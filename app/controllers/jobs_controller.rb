@@ -10,7 +10,7 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-    @steps = @job.steps
+    @complete_steps = @job.steps.where()
   end
 
   def new
