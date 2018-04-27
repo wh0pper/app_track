@@ -17,10 +17,10 @@
 </div>
 <hr>
 <div class="card">
-  <h4>Your steps for this job:</h4>
+  <h4>Remaining steps for this job:</h4>
   <div class="card-body">
     <ul class="list-group">
-      <% @steps.each do |step| %>
+      <% @incomplete_steps.each do |step| %>
         <li class="list-group-item">
           <%= step.description %>
           <%= link_to "mark complete", job_step_path(@job, step), :method => :put %>
@@ -28,5 +28,20 @@
       <% end %>
     </ul>
     <button type="button" name="button"><%= link_to "Add a step", new_job_step_path(@job)  %></button>
+  </div>
+</div>
+
+<hr>
+
+<div class="card">
+  <h4>Completed steps:</h4>
+  <div class="card-body">
+    <ul class="list-group">
+      <% @complete_steps.each do |step| %>
+        <li class="list-group-item">
+          <%= step.description %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>

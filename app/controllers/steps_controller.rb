@@ -15,7 +15,9 @@ class StepsController < ApplicationController
   end
 
   def update
-    Step.find(params[:id]).update(:status => true) #true is "done"
+    # binding.pry
+    Step.update(params[:id], :status => true) #true is "done"
+    redirect_to job_path(Job.find(params[:job_id]))
   end
 
 private

@@ -10,7 +10,8 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-    @complete_steps = @job.steps.where()
+    @complete_steps = @job.steps.where(status: true)
+    @incomplete_steps = @job.steps.where(status: false)
   end
 
   def new
