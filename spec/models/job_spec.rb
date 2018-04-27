@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe Job do
+  it { should belong_to :user }
   it { should validate_presence_of :title }
   it { should validate_presence_of :company }
   it { should validate_presence_of :post_date }
