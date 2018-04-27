@@ -1,4 +1,5 @@
 class Job < ActiveRecord::Base
+  belongs_to :user
   has_many :steps
   validates :title, :company, :post_date, :rating, :location, :url, presence: true
   validates :rating, numericality: { only_integer: true }, :inclusion => 1..10
