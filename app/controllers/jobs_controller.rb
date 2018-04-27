@@ -1,7 +1,11 @@
 class JobsController < ApplicationController
   def index
-    @jobs = Job.all
-    @new_job = Job.new
+    if current_user
+      @jobs = current_user.jobs
+      @new_job = Job.new
+    else
+      redirect_to :new_user_registration
+    end   
   end
 
   def show
@@ -34,7 +38,7 @@ class JobsController < ApplicationController
     when "most"
       @jobs = Job.most_steps
     when "fewest"
-      @jobs = Job.fewest_steps  
+      @jobs = Job.fewest_steps
     when "recent"
       @jobs = Job.last(10)
     end
