@@ -29,13 +29,13 @@ Required dependencies. Before running locally you need to have the following ins
 bundle install
 ```
 
-Initialize the database
+* Initialize the database
 ```
 rails db: create
 rails db: migrate
 rails db: seed
 ```
-
+* After seeding the database, three example users will be generated each with unique jobs saved, you can access these profiles as either user1@email.com, user2@email.com, or user3@email.com all with password: password.
 * Start up the local server
 ```
 rails server
@@ -47,7 +47,7 @@ rspec
 ```
 
 ## Technologies Used
-* Ruby on Rails, postgreSQL, rspec, Bootstrap, HTML, CSS
+* Ruby on Rails, postgreSQL, rspec, Bootstrap, HTML, CSS, Devise for authentication, Paperclip for file uploads
 
 ## License
 
