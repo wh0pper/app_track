@@ -7,7 +7,7 @@ class Job < ActiveRecord::Base
   after_create :add_default_steps
 
   scope :most_steps, -> (current_user) {(
-    select("jobs.id, jobs.title, count(steps.id) as steps_count")
+    select("jobs.id, jobs.title, jobs.company, count(steps.id) as steps_count")
     .where(user_id: current_user.id)
     .joins(:steps)
     .group("jobs.id")
@@ -16,7 +16,7 @@ class Job < ActiveRecord::Base
     )}
 
   scope :fewest_steps, -> (current_user) {(
-    select("jobs.id, jobs.title, count(steps.id) as steps_count")
+    select("jobs.id, jobs.title, jobs.company, count(steps.id) as steps_count")
     .where(user_id: current_user.id)
     .joins(:steps)
     .group("jobs.id")
