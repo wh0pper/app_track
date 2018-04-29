@@ -35,7 +35,7 @@ rails db: create
 rails db: migrate
 rails db: seed
 ```
-* After seeding the database, three example users will be generated each with unique jobs saved, you can access these profiles as either user1@email.com, user2@email.com, or user3@email.com all with password: password.
+* After seeding the database, three example users will be generated each with unique jobs saved, you can access these profiles as either user1@example.com, user2@example.com, or user3@example.com all with password: password.
 * Start up the local server
 ```
 rails server
