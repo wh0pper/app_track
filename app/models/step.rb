@@ -7,5 +7,6 @@ class Step < ActiveRecord::Base
 
   def default_status
     self.status = false
+    self.save
   end
 end
