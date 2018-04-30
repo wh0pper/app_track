@@ -35,7 +35,7 @@ users.each do |user|
                 rating: rand(1..10),
                 location: Faker::Address.city,
                 url: Faker::SiliconValley.url)
-    add_default_steps(new_job)
+    # add_default_steps(new_job)
   end
 end
 

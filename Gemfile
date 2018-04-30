@@ -6,6 +6,7 @@ ruby '2.4.1'
 gem 'devise'
 gem "paperclip", "~> 6.0.0"
 gem 'factory_bot_rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use postgresql as the database for Active Record

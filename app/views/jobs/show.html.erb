@@ -33,15 +33,17 @@
 
 <hr>
 
-<div class="card">
-  <h4>Completed steps:</h4>
-  <div class="card-body">
-    <ul class="list-group">
-      <% @complete_steps.each do |step| %>
-        <li class="list-group-item">
-          <%= step.description %>
-        </li>
-      <% end %>
-    </ul>
+<% unless @complete_steps.empty? %>
+  <div class="card">
+    <h4>Completed steps:</h4>
+    <div class="card-body">
+      <ul class="list-group">
+        <% @complete_steps.each do |step| %>
+          <li class="list-group-item">
+            <%= step.description %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-</div>
+<% end %>
