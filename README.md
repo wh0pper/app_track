@@ -11,7 +11,16 @@
 ## Pending Features
 * Search/filter jobs by city
 * Sort jobs and steps by ranking/priority respectively
-* 
+
+## Learning Objectives 
+* I worked on this project over the course of about 16 hours between my first two weeks of learning the Rails framework. At the outset of this project I set out to achieve the following learning objectives:
+  * Setting up and working with ActiveRecord associations, validations and scopes
+  * Modeling and collecting data using ActiveRecord with a postgreSQL database
+  * Routing and rendering views for CRUD behavior in Rails
+  * Test-Driven Development using RSPC 
+  * Generating fake datasets for testing and development purposes
+  * Using Devise for user authentication
+  * Using Paperclip to upload files
 
 ## Setup
 ### Instructions
